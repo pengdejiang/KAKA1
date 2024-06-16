@@ -14,12 +14,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-    
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.x
-
+      - name: Install numpy          
+        run: pip install 'numpy==1.x'
       - name: Install dependencies
         run: pip install selenium requests futures eventlet
       - name: Install dependencies
@@ -28,7 +29,7 @@ jobs:
         run: pip install Beautifulsoup4 requests 
       - name: Install dependencies
         run: pip install translate requests 
-      
+        
       - name: Run iptv
         run: python ${{ github.workspace }}/组播py/#采集.py
          
